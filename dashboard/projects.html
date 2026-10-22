@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Vynix Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="dash.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="sidebar-logo">VYNIX STUDIO</div>
+    <div class="sidebar-section">Studio</div>
+    <a href="../index.html"><i class="fa-solid fa-house"></i> Home</a>
+    <a href="index.html"><i class="fa-solid fa-circle"></i> Overview</a>
+    <a href="projects.html" class="active"><i class="fa-solid fa-gem"></i> Projects</a>
+    <a href="workspace.html"><i class="fa-solid fa-folder"></i> Workspace</a>
+    <a href="releases.html"><i class="fa-solid fa-arrow-up"></i> Releases</a>
+    <a href="assets.html"><i class="fa-solid fa-box"></i> Assets</a>
+    <div class="sidebar-section">Build</div>
+    <a href="tools.html"><i class="fa-solid fa-wrench"></i> Tools</a>
+    <a href="editors.html"><i class="fa-solid fa-pen"></i> Editors</a>
+  </aside>
+  <main class="main-content">
+    <div class="page-header" style="display:flex;justify-content:space-between;align-items:flex-start;">
+      <div>
+        <h1>Projects</h1>
+        <p>Vynix Studio projects with status, versions, docs, changelog, releases and assets.</p>
+      </div>
+    </div>
+    <div style="display:flex;gap:0.5rem;margin-bottom:1.25rem;">
+      <button class="btn btn-primary" style="font-size:0.75rem;padding:0.4rem 0.8rem;">All</button>
+      <button class="btn btn-secondary" style="font-size:0.75rem;padding:0.4rem 0.8rem;">Active</button>
+      <button class="btn btn-secondary" style="font-size:0.75rem;padding:0.4rem 0.8rem;">Development</button>
+      <button class="btn btn-secondary" style="font-size:0.75rem;padding:0.4rem 0.8rem;">Planned</button>
+    </div>
+    <div id="creator-projects-grid" class="grid grid-2"></div>
+    <p id="creator-projects-status" style="font-size:0.8rem;color:#64748b;margin-top:0.5rem;"></p>
+  </main>
+  <script src="../js/main.js"></script>
+</body>
+</html>

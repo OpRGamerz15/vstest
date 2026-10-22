@@ -1,0 +1,30 @@
+.sidebar { width: 220px; background: #0d1117; border-right: 1px solid #1e293b; padding: 1rem 0.5rem; flex-shrink: 0; position: sticky; top: 0; height: 100vh; overflow-y: auto; }
+.sidebar-logo { font-weight: 800; font-size: 0.9rem; padding: 0.5rem 0.75rem 1.25rem; letter-spacing: 0.05em; }
+.sidebar-section { font-size: 0.6rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.8rem 0.75rem 0.3rem; }
+.sidebar a { display: flex; align-items: center; gap: 0.5rem; padding: 0.45rem 0.75rem; border-radius: 0.4rem; font-size: 0.82rem; font-weight: 500; color: #94a3b8; }
+.sidebar a:hover, .sidebar a.active { background: #1e293b; color: #f1f5f9; }
+.sidebar a.active { background: #1e1b4b; color: #c4b5fd; }
+body { display: flex; min-height: 100vh; margin: 0; background: #0a0b10; }
+.main-content { flex: 1; padding: 1.5rem 2rem; overflow-y: auto; }
+.page-header h1 { font-size: 1.75rem; font-weight: 800; margin: 0 0 0.3rem; }
+.page-header p { color: #94a3b8; font-size: 0.9rem; margin: 0 0 1.5rem; }
+.stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+.stat-card { background: #111722; border: 1px solid #1e293b; border-radius: 0.75rem; padding: 1rem 1.25rem; }
+.stat-label { font-size: 0.65rem; font-weight: 700; color: #64748b; letter-spacing: 0.05em; }
+.stat-value { font-size: 1.75rem; font-weight: 800; margin-top: 0.25rem; }
+.panel { background: #111722; border: 1px solid #1e293b; border-radius: 0.75rem; padding: 1.25rem; }
+.panel h3 { margin: 0; font-size: 0.95rem; }
+.empty-state { text-align: center; color: #64748b; }
+.empty-state p { margin: 0.5rem 0 0; font-size: 0.8rem; }
+.tool-card, .editor-card { background: #111722; border: 1px solid #1e293b; border-radius: 0.75rem; padding: 1.25rem; }
+.tool-card h3, .editor-card h3 { margin: 0.5rem 0 0.25rem; font-size: 0.95rem; }
+.tool-card p, .editor-card p { margin: 0; font-size: 0.8rem; color: #94a3b8; }
+.kanban { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+.kanban-col { background: #111722; border: 1px solid #1e293b; border-radius: 0.75rem; padding: 1rem; min-height: 120px; }
+.kanban-col h4 { margin: 0 0 0.5rem; font-size: 0.85rem; }
+.drop-zone { border: 2px dashed #1e293b; border-radius: 0.75rem; padding: 3rem 1rem; text-align: center; color: #64748b; margin-bottom: 1rem; }
+@media (max-width: 900px) {
+  body { flex-direction: column; }
+  .sidebar { width: 100%; height: auto; }
+  .stats-row, .kanban { grid-template-columns: 1fr 1fr; }
+}

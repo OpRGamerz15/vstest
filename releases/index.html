@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Releases | Vynix Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a href="../index.html" class="logo">Vynix <span>Studio</span></a>
+      <nav class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="../projects/index.html">Projects</a>
+        <a href="../dashboard/index.html">Control Center</a>
+        <a href="../development/index.html">Development</a>
+        <a href="index.html">Releases</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <h2>Recent Releases</h2>
+      <p class="section-subtitle">Public versions of official Vynix products (live data pulled from Modrinth).</p>
+      <div id="releases-container" class="grid grid-2">
+        <div class="loading">Loading release data...</div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer"><div class="container">© 2026 Vynix Studio</div></footer>
+
+  <script>
+    // Lightweight release loader
+    async function loadReleases() {
+      const container = document.getElementById('releases-container');
+      try {
+        const projects = await fetch('https://api.modrinth.com/v2/user/NovaGamer15/projects').then(r => r.json());
+        const withVersions = [];
+        for (const p of projects.slice(0, 4)) {
+          try {
+            const versions = await fetch(`https://api.modrinth.com/v2/project/${p.slug}/version?limit=1`).then(r => r.json());
+            if (versions[0]) withVersions.push({ ...p, latest: versions[0] });
+          } catch {}
+        }
+        if (!withVersions.length) {
+          container.innerHTML = '<p class="loading">No release data available.</p>';
+          return;
+        }
+        container.innerHTML = withVersions.map(p => `
+          <article class="card">
+            <h3>${p.title}</h3>
+            <div class="type">${p.project_type}</div>
+            <p>Latest: <strong>${p.latest.version_number || p.latest.name}</strong></p>
+            <p style="font-size:0.75rem;color:#64748b;">${new Date(p.latest.date_published).toLocaleDateString()}</p>
+            <a href="https://modrinth.com/${p.project_type}/${p.slug}" target="_blank" class="btn btn-secondary" style="margin-top:0.75rem;font-size:0.75rem;">View Project</a>
+          </article>
+        `).join('');
+      } catch (e) {
+        container.innerHTML = '<div class="error loading">Could not load releases.</div>';
+      }
+    }
+    document.addEventListener('DOMContentLoaded', loadReleases);
+  </script>
+</body>
+</html>

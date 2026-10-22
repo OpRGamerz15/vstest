@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Overview | Vynix Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="dash.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="sidebar-logo">VYNIX STUDIO</div>
+    <div class="sidebar-section">Studio</div>
+    <a href="../index.html"><i class="fa-solid fa-house"></i> Home</a>
+    <a href="index.html" class="active"><i class="fa-solid fa-circle"></i> Overview</a>
+    <a href="projects.html"><i class="fa-solid fa-gem"></i> Projects</a>
+    <a href="workspace.html"><i class="fa-solid fa-folder"></i> Workspace</a>
+    <a href="releases.html"><i class="fa-solid fa-arrow-up"></i> Releases</a>
+    <a href="assets.html"><i class="fa-solid fa-box"></i> Assets</a>
+    <div class="sidebar-section">Build</div>
+    <a href="tools.html"><i class="fa-solid fa-wrench"></i> Tools</a>
+    <a href="editors.html"><i class="fa-solid fa-pen"></i> Editors</a>
+  </aside>
+  <main class="main-content">
+    <div class="page-header">
+      <h1>Studio Overview</h1>
+      <p>Everything below is counted from data actually stored in this studio — nothing is simulated.</p>
+    </div>
+    <div class="stats-row">
+      <div class="stat-card"><div class="stat-label">PROJECTS</div><div class="stat-value">2</div></div>
+      <div class="stat-card"><div class="stat-label">RELEASES</div><div class="stat-value">0</div></div>
+      <div class="stat-card"><div class="stat-label">OPEN TASKS</div><div class="stat-value">0</div></div>
+      <div class="stat-card"><div class="stat-label">ASSETS</div><div class="stat-value">0</div></div>
+    </div>
+    <div class="grid-3" style="margin-top:1.5rem;">
+      <div class="panel">
+        <h3>Quick actions</h3>
+        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:0.75rem;">
+          <button class="btn btn-primary" style="font-size:0.8rem;">+ New project</button>
+          <button class="btn btn-secondary" style="font-size:0.8rem;">+ Task</button>
+          <button class="btn btn-secondary" style="font-size:0.8rem;">+ Release</button>
+        </div>
+        <div style="display:flex;gap:0.5rem;margin-top:0.5rem;">
+          <button class="btn btn-secondary" style="font-size:0.75rem;">Skin editor</button>
+          <button class="btn btn-secondary" style="font-size:0.75rem;">Tools</button>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>Recent activity</h3>
+        <p style="font-size:0.8rem;color:#94a3b8;margin-top:0.75rem;">No recent activity.</p>
+      </div>
+      <div class="panel">
+        <h3>Recent projects</h3>
+        <div style="margin-top:0.75rem;font-size:0.85rem;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
+            <span>Vynix PVP</span><span class="status-pill status-released">ACTIVE</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span>VynixShader</span><span class="status-pill status-released">ACTIVE</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid-3" style="margin-top:1.25rem;">
+      <div class="panel empty-state"><h3>Recent releases</h3><p>No releases yet</p></div>
+      <div class="panel empty-state"><h3>Tasks</h3><p>No open tasks</p></div>
+      <div class="panel empty-state"><h3>Notifications</h3><p>No notifications yet</p></div>
+    </div>
+  </main>
+</body>
+</html>
